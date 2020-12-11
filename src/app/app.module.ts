@@ -6,10 +6,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { AppService } from './app.service';
 import { CharacterComponent } from './character/character.component';
+import { EpisodeComponent } from './episode/episode.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CharacterComponent
+    CharacterComponent,
+    EpisodeComponent
   ],
   imports: [
     BrowserModule,

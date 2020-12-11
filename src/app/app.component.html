@@ -1,7 +1,7 @@
 <ng-container *ngIf="!characterSelected">
     <div class="container-fluid">
         <div class="col text-center">
-            <h1 class="title-font mt-4">Rick y Morty</h1>
+            <h1 class="title-font mt-4">Caracteres de Rick y Morty </h1>
         </div>
     </div>
 
@@ -13,7 +13,7 @@
                     <img class="img-character" [src]="character.image">
                     <div class="content-character legend-character mt-3 p-1">
                         <span><span class="number-character">{{character.id}}</span> {{character.name}}</span>
-                        <span>{{character.species}} - {{character.status}}</span>
+                        <span>{{character.species}} - {{character.status == 'Alive' ? 'Vivo' : character.status == 'Dead' ? 'Muerto' : 'Desconocido'}}</span>
                     </div>
                 </div>
             </ng-container>
