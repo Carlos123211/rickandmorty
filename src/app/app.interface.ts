@@ -39,6 +39,7 @@ export interface episode{
     created:string,
     episode:string,
     name:string,
+    id:number,
     url:string,
     characters:character[]
 }

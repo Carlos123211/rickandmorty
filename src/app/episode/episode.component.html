@@ -1,10 +1,28 @@
-<div class="container-fluid mt-4">
+<div *ngIf="episodeData" class="container-fluid mt-4">
     <div (click)="back()">
         <i class="fas fa-arrow-left font-a-style"></i>
     </div>
     <div class="row">
-        <div class="col-12 d-flex flex-column">
+        <div class="col-12 text-center">
             <span class="title-font-name">{{episodeData.name}}</span>
+        </div>
+        <div class="col-12 d-flex flex-column">
+            <span class="font-styled-span">Número de Episodio : {{episodeData.id}}</span>
+            <span class="font-styled-span">Al aire el : {{episodeData.air_date}}</span>
+            <span class="font-styled-span">Temporada : {{episodeData.episode}}</span>
+        </div>
+        <h2 class="ml-3 font-for-title"> Personajes </h2>
+        <div class="row m-0">
+            <ng-container *ngFor="let character of characters">
+                <div class="col-md-3 character">
+                    <img class="img-character" [src]="character.image">
+                    <div class="content-character legend-character mt-3 p-1">
+                        <span><span class="number-character">{{character.id}}</span> {{character.name}}</span>
+                        <span>{{character.species}} - {{character.status == 'Alive' ? 'Vivo' : character.status == 'Dead' ? 'Muerto' : 'Desconocido'}}</span>
+                    </div>
+                </div>
+            </ng-container>
+
         </div>
     </div>
 </div>
