@@ -7,7 +7,9 @@ import { Location } from "@angular/common";
   styleUrls: ['./character.component.scss']
 })
 export class CharacterComponent implements OnInit, OnChanges {
-
+  /** 
+   * Componente que muestra los personajes de rick y morty y sus espicificaciones.
+  */
   @Input() character:character;
   @Output() backScreen = new EventEmitter<boolean>();
     selectedEpisode: number;
@@ -26,11 +28,11 @@ export class CharacterComponent implements OnInit, OnChanges {
   back(){
     this.backScreen.emit(true);
   }
-
+  /**Método para seleccionar el episodio */
   selectEpisode(i){
     this.selectedEpisode = i
   }
-
+  /**Método para retornar a la página anterior, esto es debido a que se emite un valor. */
   return(e){
     if(e){
       this.selectedEpisode = null
