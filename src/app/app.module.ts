@@ -5,9 +5,11 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { AppService } from './app.service';
+import { CharacterComponent } from './character/character.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CharacterComponent
   ],
   imports: [
     BrowserModule,

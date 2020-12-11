@@ -1,25 +1,29 @@
-<div class="container-fluid">
-    <div class="col text-center">
-        <h1 class="title-font mt-4">Rick y Morty</h1>
+<ng-container *ngIf="!characterSelected">
+    <div class="container-fluid">
+        <div class="col text-center">
+            <h1 class="title-font mt-4">Rick y Morty</h1>
+        </div>
     </div>
-</div>
 
-<div class="container-fluid">
+    <div class="container-fluid">
 
-    <div class="row">
-        <ng-container *ngFor="let character of characters">
-            <div class="col-md-3 character ">
-                <img class="img-character" [src]="character.image">
-                <div class="content-character legend-character mt-3 p-1">
-                    <span><span class="number-character">{{character.id}}</span> {{character.name}}</span>
-                    <span>{{character.species}} - {{character.status}}</span>
+        <div class="row">
+            <ng-container *ngFor="let character of characters">
+                <div class="col-md-3 character" (click)="selectCharacter(character)">
+                    <img class="img-character" [src]="character.image">
+                    <div class="content-character legend-character mt-3 p-1">
+                        <span><span class="number-character">{{character.id}}</span> {{character.name}}</span>
+                        <span>{{character.species}} - {{character.status}}</span>
+                    </div>
                 </div>
-            </div>
-        </ng-container>
-    </div>
+            </ng-container>
+        </div>
 
-    <div class="row m-4 justify-content-center">
-        <ngb-pagination *ngIf="info" [collectionSize]="info.count" [(page)]="page" (pageChange)="changeCharacters($event)" [pageSize]="20" [maxSize]="5" [rotate]="true" [boundaryLinks]="true"></ngb-pagination>
-    </div>
+        <div class="row m-4 justify-content-center">
+            <ngb-pagination *ngIf="info" [collectionSize]="info.count" [(page)]="page" (pageChange)="changeCharacters($event)" [pageSize]="20" [maxSize]="5" [rotate]="true" [boundaryLinks]="true"></ngb-pagination>
+        </div>
 
-</div>
+    </div>
+</ng-container>
+
+<app-character *ngIf="characterSelected" [character]="characterSelected"></app-character>

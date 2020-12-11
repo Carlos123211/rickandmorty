@@ -11,8 +11,13 @@ export class AppComponent implements OnInit {
   characters:character[];
   page = 1;
   info:info;
+  characterSelected:character;
   constructor(private service:AppService){
 
+  }
+
+  selectCharacter(e){
+    this.characterSelected = e
   }
 
   changeCharacters(e){
