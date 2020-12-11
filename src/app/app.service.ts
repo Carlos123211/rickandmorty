@@ -14,4 +14,8 @@ export class AppService {
     console.log(page)
     return this.http.get(`https://rickandmortyapi.com/api/character/?page=${page}`)
   }
+
+  getEpisode(episode=1){
+    return this.http.get(`https://rickandmortyapi.com/api/episode/${episode}`)
+  }
 }

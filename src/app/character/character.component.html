@@ -1,4 +1,4 @@
-<div class="container-fluid mt-4">
+<div *ngIf="!selectedEpisode" class="container-fluid mt-4">
     <div (click)="back()">
         <i class="fas fa-arrow-left font-a-style"></i>
     </div>
@@ -11,6 +11,7 @@
             <span class="">Estado: {{character.status == 'Alive' ? 'Vivo' : character.status == 'Dead' ? 'Muerto' : 'Desconocido' }}</span>
             <span class="">Género: {{character.gender}} </span>
             <span class="">Especie: {{character.species}} </span>
+            <span>Ubicación: {{character.location.name}} </span>
         </div>
         <div class="container-fluid">
             <div class="row mt-3">
@@ -20,7 +21,7 @@
                     </h2>
                 </div>
                 <ng-container *ngFor="let episode of character.episode;let i = index">
-                    <div class="col-1" (click)="selectEpisode(i)">
+                    <div class="col-1" (click)="selectEpisode(i+1)">
                         <span class="number-character">{{i+1}}</span>
                     </div>
                 </ng-container>
@@ -28,3 +29,5 @@
         </div>
     </div>
 </div>
+
+<app-episode *ngIf="selectedEpisode" (backScreen)="return($event)" [episode]="selectedEpisode"></app-episode>

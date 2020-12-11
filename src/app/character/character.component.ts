@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
-import { character } from '../app.interface';
+import { character, episode } from '../app.interface';
 import { Location } from "@angular/common";
 @Component({
   selector: 'app-character',
@@ -10,7 +10,7 @@ export class CharacterComponent implements OnInit, OnChanges {
 
   @Input() character:character;
   @Output() backScreen = new EventEmitter<boolean>();
-
+    selectedEpisode: number;
   constructor(
     private _location: Location,) { }
 
@@ -28,7 +28,13 @@ export class CharacterComponent implements OnInit, OnChanges {
   }
 
   selectEpisode(i){
-    console.log(i)
+    this.selectedEpisode = i
+  }
+
+  return(e){
+    if(e){
+      this.selectedEpisode = null
+    }
   }
 
 }

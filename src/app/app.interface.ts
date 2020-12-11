@@ -8,7 +8,7 @@ export interface character {
     status:string,
     type: string,
     url:string,
-    location: location[],
+    location: location,
 
 }
 
@@ -32,4 +32,13 @@ export interface info{
     next: string,
     pages: number,
     prev: number,
+}
+
+export interface episode{
+    air_date:string,
+    created:string,
+    episode:string,
+    name:string,
+    url:string,
+    characters:character[]
 }
