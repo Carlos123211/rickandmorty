@@ -38,5 +38,12 @@ export class AppComponent implements OnInit {
       this.getCharacters();
   }
 
+  return(e){
+    let character:character
+    if(e){
+      this.characterSelected = character
+    }
+  }
+
 
 }

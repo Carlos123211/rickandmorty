@@ -1,6 +1,6 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { character } from '../app.interface';
-
+import { Location } from "@angular/common";
 @Component({
   selector: 'app-character',
   templateUrl: './character.component.html',
@@ -9,8 +9,10 @@ import { character } from '../app.interface';
 export class CharacterComponent implements OnInit, OnChanges {
 
   @Input() character:character;
+  @Output() backScreen = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor(
+    private _location: Location,) { }
 
   ngOnChanges(changes: SimpleChanges){
     console.log(changes)
@@ -19,6 +21,10 @@ export class CharacterComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     console.log(this.character)
+  }
+
+  back(){
+    this.backScreen.emit(true);
   }
 
 }

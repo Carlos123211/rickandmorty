@@ -1,10 +1,14 @@
 <div class="container-fluid mt-4 mx-4">
+    <div (click)="back()">
+        <i class="fas fa-arrow-left font-a-style"></i>
+    </div>
     <div class="row">
         <div class="col-4">
-            <img [src]="character.image">
+            <img class="img-character" [src]="character.image">
         </div>
-        <div class="col-8">
+        <div class="col-8 d-flex flex-column">
             <span class="title-font-name">{{character.name}}</span>
+            <span class="">Estado: {{character.status == 'Alive' ? 'Vivo' : character.status == 'Dead' ? 'Muerto' : 'Desconocido' }}</span>
         </div>
     </div>
 </div>

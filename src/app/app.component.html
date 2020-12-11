@@ -26,4 +26,4 @@
     </div>
 </ng-container>
 
-<app-character *ngIf="characterSelected" [character]="characterSelected"></app-character>
+<app-character *ngIf="characterSelected" (backScreen)="return($event)" [character]="characterSelected"></app-character>
