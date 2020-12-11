@@ -1,4 +1,4 @@
-<div class="container-fluid mt-4 mx-4">
+<div class="container-fluid mt-4">
     <div (click)="back()">
         <i class="fas fa-arrow-left font-a-style"></i>
     </div>
@@ -9,6 +9,22 @@
         <div class="col-8 d-flex flex-column">
             <span class="title-font-name">{{character.name}}</span>
             <span class="">Estado: {{character.status == 'Alive' ? 'Vivo' : character.status == 'Dead' ? 'Muerto' : 'Desconocido' }}</span>
+            <span class="">Género: {{character.gender}} </span>
+            <span class="">Especie: {{character.species}} </span>
+        </div>
+        <div class="container-fluid">
+            <div class="row mt-3">
+                <div class="col-12">
+                    <h2>
+                        Episodios
+                    </h2>
+                </div>
+                <ng-container *ngFor="let episode of character.episode;let i = index">
+                    <div class="col-1" (click)="selectEpisode(i)">
+                        <span class="number-character">{{i+1}}</span>
+                    </div>
+                </ng-container>
+            </div>
         </div>
     </div>
 </div>

@@ -27,4 +27,8 @@ export class CharacterComponent implements OnInit, OnChanges {
     this.backScreen.emit(true);
   }
 
+  selectEpisode(i){
+    console.log(i)
+  }
+
 }

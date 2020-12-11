@@ -30,10 +30,14 @@
 }
 
 .number-character {
-    background: rgba(33, 216, 255, 0.8);
+    background: rgba(119, 117, 5, 0.555);
     color: rgb(255, 255, 255);
     border-radius: 3px;
     padding: 0px 6px;
+}
+
+.number-character:hover {
+    cursor: pointer;
 }
 
 .title-font-name {
