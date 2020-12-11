@@ -1,4 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
 
+
 /* Importing Bootstrap SCSS file. */
+
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Langar&family=Nerko+One&display=swap');
+@font-face {
+    font-family: 'Get Schwifty';
+    src: url('assets/fonts/GetSchwifty-Regular.woff2') format('woff2'), url('assets/fonts/GetSchwifty-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background: rgb(9, 221, 83);
+    background: linear-gradient(90deg, rgba(9, 221, 83, 1) 0%, rgba(35, 186, 68, 1) 35%, rgba(0, 255, 132, 1) 100%);
+}
+
+
+/* body::after {
+    content: "Rick y Morty";
+    font-size: 5em;
+    font-family: 'Get Schwifty';
+    color: rgba(1, 13, 19, 0.877);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-pointer-events: none;
+    -moz-pointer-events: none;
+    -ms-pointer-events: none;
+    -o-pointer-events: none;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-transform: rotate(310deg);
+    -moz-transform: rotate(310deg);
+    -o-transform: rotate(310deg);
+    -ms-transform: rotate(310deg);
+    transform: rotate(310deg);
+} */
+
+.title-font {
+    font-family: 'Get Schwifty';
+}
