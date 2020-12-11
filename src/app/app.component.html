@@ -1,13 +1,25 @@
-<div class="container">
-    <div class="col">
-        <h1 class="title-font mt-4">Bienvenidos a la guía de personajes de Rick y Morty</h1>
+<div class="container-fluid">
+    <div class="col text-center">
+        <h1 class="title-font mt-4">Rick y Morty</h1>
     </div>
 </div>
 
-<div class="container">
-    <ng-container>
-        <div class="col-3">
-            Prueba
-        </div>
-    </ng-container>
+<div class="container-fluid">
+
+    <div class="row">
+        <ng-container *ngFor="let character of characters">
+            <div class="col-md-3 character ">
+                <img class="img-character" [src]="character.image">
+                <div class="content-character legend-character mt-3 p-1">
+                    <span><span class="number-character">{{character.id}}</span> {{character.name}}</span>
+                    <span>{{character.species}} - {{character.status}}</span>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+
+    <div class="row m-4 justify-content-center">
+        <ngb-pagination *ngIf="info" [collectionSize]="info.count" [(page)]="page" (pageChange)="changeCharacters($event)" [pageSize]="20" [maxSize]="5" [rotate]="true" [boundaryLinks]="true"></ngb-pagination>
+    </div>
+
 </div>

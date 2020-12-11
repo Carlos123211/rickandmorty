@@ -1,6 +1,6 @@
 import { Component, OnInit  } from '@angular/core';
 import {AppService} from './app.service';
-import { character,results } from './app.interface';
+import { character,results,info } from './app.interface';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,14 +9,23 @@ import { character,results } from './app.interface';
 export class AppComponent implements OnInit {
   title = 'rickandmorty';
   characters:character[];
+  page = 1;
+  info:info;
   constructor(private service:AppService){
 
   }
 
+  changeCharacters(e){
+    console.log(e)
+    this.page = e
+    this.getCharacters();
+
+  }
+
   getCharacters(){
-    this.service.getCaracters(1).subscribe((data:results)=>{
+    this.service.getCaracters(this.page).subscribe((data:results)=>{
       this.characters = data.results;
-      console.log(this.characters)
+      this.info = data.info
     })
   }
 
